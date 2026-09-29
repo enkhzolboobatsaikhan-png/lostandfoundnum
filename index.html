@@ -167,10 +167,10 @@ function loginPage(){
   const t=state.lt,ad=t==="admin",rg=t==="register";
   const T=(k,x)=>`<button class="${t===k?"on":""}" onclick="state.lt='${k}';render()">${x}</button>`;
   const F=(id,lab,ic,ty,ph)=>`<label>${lab}</label><div class="inp"><i>${ic}</i><input id="${id}" type="${ty||"text"}" placeholder="${ph||""}"></div>`;
-  const form=rg?F("rid","Оюутны код *","text","B2024001")+F("rname","Овог нэр *","👤")+F("rmail","И-мэйл *","✉️","email","name@num.edu.mn")+F("rphone","Утас * (8 орон)","📞","tel")
+  const form=rg?F("rid","Оюутны код *","text","B2024001")+F("rname","Овог нэр *")+F("rmail","И-мэйл *","email","name@num.edu.mn")+F("rphone","Утас * (8 орон)","tel")
     +F("rp1","Нууц үг * (6+ тэмдэгт)","password")+F("rp2","Нууц үг давтах *","password")+`<button class="go" onclick="doRegister()">Бүртгүүлэх</button>`
-    :`<label>${ad?"Админы нэр":"Оюутны код"}</label><div class="inp"><i>👤</i><input id="lu" autocomplete="username"></div>
-    <label>Нууц үг</label><div class="inp"><i>🔒</i><input id="lp" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"><button class="eye" type="button" onclick="lp.type=lp.type==='password'?'text':'password'">👁</button></div>
+    :`<label>${ad?"Админы нэр":"Оюутны код"}</label><div class="inp"><i></i><input id="lu" autocomplete="username"></div>
+    <label>Нууц үг</label><div class="inp"><i></i><input id="lp" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"><button class="eye" type="button" onclick="lp.type=lp.type==='password'?'text':'password'"></button></div>
     <button class="go" onclick="doLogin()">Нэвтрэх</button>
     <p class="meta" style="margin-top:14px">${ad?"Демо админ: <b>admin</b> / <b>admin123</b>":"Бүртгэлгүй бол дээрх <b>Бүртгүүлэх</b> табыг сонгоно уу."}</p>`;
   return `<div class="auth-wrap"><div class="auth-l">
@@ -179,7 +179,7 @@ function loginPage(){
     <div class="lt">${T("student","Нэвтрэх")}${T("register","Бүртгүүлэх")}${T("admin","Админ")}</div>${form}</div>
    <div class="foot"><a onclick="go('home')">← Нүүр хуудас руу буцах</a></div></div>
    <div class="auth-r"><h2>Алдсан зүйлээ олж,<br>олсон зүйлээ эзэнд нь өгье</h2><p>Сургуулийн бүх байрны алдагдсан эд зүйлийг нэг дор бүртгэж, баталгаажуулан буцаана.</p>
-   <ul><li>📝 Зураг, тайлбартай зар оруулна</li><li>🔎 Ангилал, байршлаар хайна</li><li>✅ Админ шалгаж, эзэнд нь аюулгүй хүлээлгэн өгнө</li></ul></div></div>`;
+   <ul><li> Зураг, тайлбартай зар оруулна</li><li>🔎 Ангилал, байршлаар хайна</li><li>✅ Админ шалгаж, эзэнд нь аюулгүй хүлээлгэн өгнө</li></ul></div></div>`;
 }
 /* ---------- Навигаци ---------- */
 function renderNav(){
