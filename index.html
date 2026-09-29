@@ -167,8 +167,8 @@ function loginPage(){
   const t=state.lt,ad=t==="admin",rg=t==="register";
   const T=(k,x)=>`<button class="${t===k?"on":""}" onclick="state.lt='${k}';render()">${x}</button>`;
   const F=(id,lab,ic,ty,ph)=>`<label>${lab}</label><div class="inp"><i>${ic}</i><input id="${id}" type="${ty||"text"}" placeholder="${ph||""}"></div>`;
-  const form=rg?F("rid","Оюутны код *","🪪","text","B2024001")+F("rname","Овог нэр *","👤")+F("rmail","И-мэйл *","✉️","email","name@num.edu.mn")+F("rphone","Утас * (8 орон)","📞","tel")
-    +F("rp1","Нууц үг * (6+ тэмдэгт)","🔒","password")+F("rp2","Нууц үг давтах *","🔒","password")+`<button class="go" onclick="doRegister()">Бүртгүүлэх</button>`
+  const form=rg?F("rid","Оюутны код *","text","B2024001")+F("rname","Овог нэр *","👤")+F("rmail","И-мэйл *","✉️","email","name@num.edu.mn")+F("rphone","Утас * (8 орон)","📞","tel")
+    +F("rp1","Нууц үг * (6+ тэмдэгт)","password")+F("rp2","Нууц үг давтах *","password")+`<button class="go" onclick="doRegister()">Бүртгүүлэх</button>`
     :`<label>${ad?"Админы нэр":"Оюутны код"}</label><div class="inp"><i>👤</i><input id="lu" autocomplete="username"></div>
     <label>Нууц үг</label><div class="inp"><i>🔒</i><input id="lp" type="password" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"><button class="eye" type="button" onclick="lp.type=lp.type==='password'?'text':'password'">👁</button></div>
     <button class="go" onclick="doLogin()">Нэвтрэх</button>
